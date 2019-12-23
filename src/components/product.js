@@ -59,13 +59,13 @@ const Product = ({data}) => {
 				</div>
 				<div className="d-flex justify-content-around flex-wrap">
 					{
-						ProdcutData.map(item=>{
+						ProdcutData.map((item, i)=>{
 							return(
-								<Card>
+								<Card key={i}>
 									<CardBody>
 										<h4 dangerouslySetInnerHTML={{ __html: item.elements.title.value }} />
 										<h5 dangerouslySetInnerHTML={{__html: item.elements.sub_title.value}} />
-										<p dangerouslySetInnerHTML={{__html: item.elements.content.value}} />
+										<div dangerouslySetInnerHTML={{__html: item.elements.content.value}} />
 									</CardBody>
 								</Card>
 							)

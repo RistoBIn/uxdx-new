@@ -32,7 +32,7 @@ const Conference = ({data}) => {
 							return(
 								<Item>
 									<h3 dangerouslySetInnerHTML={{ __html: item.elements.title.value }} />
-									<p dangerouslySetInnerHTML={{__html: item.elements.sub_title.value}} />
+									<div dangerouslySetInnerHTML={{__html: item.elements.sub_title.value}} />
 								</Item>
 							)
 						})

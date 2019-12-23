@@ -52,7 +52,7 @@ const Offer = ({data}) => {
 										<CardBody>
 											<h4 dangerouslySetInnerHTML={{ __html: item.elements.title.value }} />
 											<h5 dangerouslySetInnerHTML={{__html: item.elements.sub_title.value}} />
-											<p dangerouslySetInnerHTML={{__html: item.elements.content.value}} />
+											<div dangerouslySetInnerHTML={{__html: item.elements.content.value}} />
 											<img src={imgData} />
 										</CardBody>
 									</Card>
