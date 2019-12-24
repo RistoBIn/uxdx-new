@@ -18,11 +18,22 @@ const Nav = styled.nav`
 const Logo = styled.div`
   font-size: 1.5rem;
   margin-right: 0.3rem;
+  width: 200px;
   font-weight: 800;
 
   a {
     text-decoration: none;
     color: white;
+  }
+`
+const Menu = styled.div`
+  text-align: right;
+  width: calc(100% - 200px);
+
+  a {
+    text-decoration: none;
+    color: white;
+    margin: 0 30px;
   }
 `
 
@@ -35,9 +46,14 @@ const Header = ({ title, menuIems }) => {
           <Link
             to="/"
           >
-            <div dangerouslySetInnerHTML={{ __html: title }} />
+            UXDX
           </Link>
         </Logo>
+        <Menu>
+          <Link to="/framework">Framework</Link>
+          <Link to="/europe/speakers">Speakers</Link>
+          <Link to="/europe/tickets">Tickets</Link>
+        </Menu>
       </Nav>
     </HeaderWrapper>
   )

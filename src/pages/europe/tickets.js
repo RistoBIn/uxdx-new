@@ -1,78 +1,50 @@
 import React from "react"
 import { Link } from "gatsby"
 
-import Layout from "../components/layout"
-import Image from "../components/image"
-import SEO from "../components/seo"
+import Layout from "../../components/layout"
+import Image from "../../components/image"
+import SEO from "../../components/seo"
 
-import Hero from '../components/hero'
-import Conference from '../components/conference'
-import Product from '../components/product'
-import Offer from "../components/offer"
-import RegsiterSection from "../components/register"
-import { ImageBackgroundWrapper, Section } from "../components/section"
-import Container from "../components/container"
-import Button from "../components/button"
+import Hero from '../../components/hero'
+import { ImageBackgroundWrapper, Section } from "../../components/section"
+import Container from "../../components/container"
+import Button from "../../components/button"
+import Faq from "../../components/faq"
 
-const ButtonText = (data) => {
-  let btnTxt = data.replace("<p>", "").replace("</p>", "") 
-  return (btnTxt)
-}
-
-export const IndexPageTemplate = ({sections}) => {
-  const speakerData = sections.linked_items[6]
-  const recapData = sections.linked_items[7]
+export const TicketsPageTemplate = ({sections}) => {
+  const faqData = sections.linked_items[2].elements.columns.linked_items
   return(
     <div>
       <Hero data={sections.linked_items[0]} />
-      <Product data={sections.linked_items[2]} />
-      <Offer data={sections.linked_items[3]} />
-      <Conference data={sections.linked_items[5]} />
       <Section padding="7rem 0">
         <Container>
           <div className="text-center">
-            <h2 dangerouslySetInnerHTML={{ __html: speakerData.elements.title.value }} />
-          </div>
-          <div className="text-center">
-            <Button
-              color="#000"
-              bgColor="#fff"
-              borderColor="#000"
-              hoverColor="#fff"
-              hoverBgColor="#000"
-              href="/europe/speakers"
-            >
-              { ButtonText(speakerData.elements.columns.linked_items[1].elements.widgets.linked_items[0].elements.text.value) }
-            </Button>
-          </div>
-          <br/>
-          <div className="text-center">
-            <Button
-              color="#000"
-              bgColor="#fff"
-              borderColor="#000"
-              hoverColor="#fff"
-              hoverBgColor="#000"
-              href="/europe/tickets"
-            >
-              { ButtonText(speakerData.elements.columns.linked_items[2].elements.widgets.linked_items[0].elements.text.value) }
-            </Button>
+            <h2 dangerouslySetInnerHTML={{ __html: sections.linked_items[1].elements.title.value }} />
+            <div dangerouslySetInnerHTML={{ __html: sections.linked_items[1].elements.sub_title.value }} />
           </div>
         </Container>
       </Section>
       <Section padding="7rem 0">
         <Container>
           <div className="text-center">
-            <h2 dangerouslySetInnerHTML={{ __html: recapData.elements.title.value }} />
+            <h2 dangerouslySetInnerHTML={{ __html: sections.linked_items[2].elements.title.value }} />
+          </div>
+          <div>
+            {
+              faqData.map((item, i) => {
+                return (
+                  <Faq data={item} key={i} />
+                )
+              })
+            }
           </div>
         </Container>
       </Section>
-      <RegsiterSection data={sections.linked_items[8]} />
     </div>
   )
 }
 
-const IndexPage = ({data}) => {
+const TicketsPage = ({data}) => {
   const pageData = data.allKontentItemApplicationPages.nodes[0]
   const navData = pageData.elements.header_menu.linked_items[0].elements
   const sectionData = pageData.elements.sections
@@ -86,15 +58,15 @@ const IndexPage = ({data}) => {
         title={pageData.elements.meta_title.value} 
         description={pageData.elements.meta_description.value}
       />
-      <IndexPageTemplate sections={sectionData} />
+      <TicketsPageTemplate sections={sectionData} />
     </Layout>
   )
 }
 
-export default IndexPage
+export default TicketsPage
 
-export const homePageQuery = graphql`{
-  allKontentItemApplicationPages(filter: {fields: {slug: {eq: "home"}}}) {
+export const TicketsPageQuery = graphql`{
+  allKontentItemApplicationPages(filter: {fields: {slug: {eq: "europe/tickets"}}}) {
     nodes {
       elements {
         menu_title {

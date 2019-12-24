@@ -35,7 +35,7 @@ const CardBody = styled.div`
 
 const Offer = ({data}) => {
 	const OfferData = data.elements.columns.linked_items
-	let buttonText = ""
+	let BtnText = ""
 	return(
 		<Section backgroundColor={data.elements.background_color.value} padding="7rem 0">
 			<Container>
@@ -58,19 +58,23 @@ const Offer = ({data}) => {
 									</Card>
 								)
 							} else {
-								 buttonText = item.elements.widgets.linked_items[0].elements.text.value
+								 BtnText = item.elements.widgets.linked_items[0].elements.text.value
 							}
 						})
 					}
 				</div>
-				<Button
-					color="#000"
-					bgColor="#fff"
-					borderColor="#000"
-					hoverColor="#fff"
-					hoverBgColor="#000"
-					dangerouslySetInnerHTML={{__html: buttonText}}
-				/>
+				<div className='text-center'>
+					<Button
+						color="#000"
+						bgColor="#fff"
+						borderColor="#000"
+						hoverColor="#fff"
+						hoverBgColor="#000"
+						href="/framework"
+					>
+						{ BtnText.replace("<p>", "").replace("</p>", "") }
+					</Button>
+				</div>
 			</Container>
 		</Section>
 	)

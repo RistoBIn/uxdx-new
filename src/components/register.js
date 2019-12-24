@@ -5,6 +5,9 @@ import {ImageBackgroundWrapper, Section} from "./section"
 import Button from "./button"
 
 const RegsiterSection = ({data}) => {
+	
+	let btnText = data.elements.columns.linked_items[1].elements.widgets.linked_items[0].elements.button_text.value
+	
 	return(
 		<ImageBackgroundWrapper backgroundImage={data.elements.background_image.value[0].url}>
 			<Section padding="7rem 0"> 
@@ -13,6 +16,7 @@ const RegsiterSection = ({data}) => {
 						<div dangerouslySetInnerHTML={{ __html: data.elements.columns.linked_items[0].elements.title.value }} />
 						<h5 dangerouslySetInnerHTML={{__html: data.elements.columns.linked_items[0].elements.sub_title.value}} />
 						<div dangerouslySetInnerHTML={{__html: data.elements.columns.linked_items[0].elements.content.value}} />
+						<br/><br/>
 						<Button
 							color="#000"
 							bgColor="#fff"
@@ -20,7 +24,7 @@ const RegsiterSection = ({data}) => {
 							hoverColor="#fff"
 							hoverBgColor="#000"
 						>
-							<p dangerouslySetInnerHTML={{__html: data.elements.columns.linked_items[1].elements.widgets.linked_items[0].elements.button_text.value}} />
+							{btnText}
 						</Button>
 					</div>
 				</Container>
