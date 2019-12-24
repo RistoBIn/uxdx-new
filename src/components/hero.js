@@ -26,7 +26,7 @@ const HeroWrapper = styled.div`
 const ColorWrapper = styled.div`
 	background-color: #${props=>props.backgroundColor};
 	opacity: 0.9;
-	padding: 8rem;
+	padding: 12rem 0 8rem;
 `
 
 const RenderButton =  (data) => {

@@ -12,11 +12,19 @@ const FadeClick = styled.div`
 	& h4 {
 		font-size: 1.5rem;
 		margin-bottom: 0px;
+		width: calc(100% - 20px);
+		display: inline-block;
 	}
 
 	&:hover {
 		cursor: pointer;
 
+	}
+	&:after {
+		content: "▼";
+    color: ${props=>props.isVisible ? "white" : "#808080"};
+    transform: ${props=>props.isVisible ? "rotate(180deg)" : "rotate(0deg)"};
+    display: inline-block;
 	}
 `
 const FadeContent = styled.div`

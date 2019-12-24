@@ -6,6 +6,9 @@ import styled from "styled-components"
 const HeaderWrapper = styled.header`
     background: linear-gradient(to left, #a865e1, #7F7FF0);
     color: #fff;
+    position: fixed;
+    width: 100%;
+    z-index: 100;
 `
 
 const Nav = styled.nav`
