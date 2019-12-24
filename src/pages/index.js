@@ -9,7 +9,8 @@ import Hero from '../components/hero'
 import Conference from '../components/conference'
 import Product from '../components/product'
 import Offer from "../components/offer"
-import { Section } from "../components/section"
+import RegsiterSection from "../components/register"
+import { ImageBackgroundWrapper, Section } from "../components/section"
 import Container from "../components/container"
 import Button from "../components/button"
 
@@ -52,7 +53,7 @@ export const IndexPageTemplate = ({sections}) => {
           </div>
         </Container>
       </Section>
-      
+      <RegsiterSection data={sections.linked_items[8]} />
     </div>
   )
 }

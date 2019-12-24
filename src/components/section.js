@@ -5,7 +5,7 @@ export const Section = styled.div`
 	background-color: #${props=>props.backgroundColor};
 	padding: ${props=>props.padding};
 	border-bottom: 1px solid #00000033;
-	opacity: 0.9;
+	opacity: ${props=>props.opacity};
 `
 
 export const ImageBackgroundWrapper = styled.div`
