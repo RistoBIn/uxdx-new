@@ -1,7 +1,3 @@
-Gatsby repository for UXDX website
+# uxdx-new
 
-Pulls in data from kentico and airtable
-
-
-Build is done via netlify
-
+https://uxdx-new.netlify.com
