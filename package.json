@@ -1,48 +1,73 @@
 {
-  "name": "gatsby-starter-default",
-  "private": true,
-  "description": "A simple starter to get up and developing quickly with Gatsby",
-  "version": "0.1.0",
-  "author": "Kyle Mathews <mathews.kyle@gmail.com>",
+  "name": "uxdx",
+  "description": "uxdx",
+  "scripts": {
+    "build": "gatsby build",
+    "develop": "gatsby develop",
+    "test": "standard && jest",
+    "lint": "standard 'src/**/*.js'",
+    "lint:fix": "eslint src --fix",
+    "lightcrawler": "lightcrawler -u https://build-64e7cbfa-0a70-4dac-b301-807dda852d9e.gtsb.io/ -c lightcrawler-config.json"
+  },
   "dependencies": {
-    "@kentico/gatsby-source-kontent": "^4.0.0",
-    "babel-plugin-styled-components": "^1.10.6",
-    "gatsby": "^2.18.12",
-    "gatsby-image": "^2.2.34",
-    "gatsby-plugin-manifest": "^2.2.31",
-    "gatsby-plugin-offline": "^3.0.27",
-    "gatsby-plugin-react-helmet": "^3.1.16",
-    "gatsby-plugin-sharp": "^2.3.5",
-    "gatsby-plugin-styled-components": "^3.1.16",
-    "gatsby-source-filesystem": "^2.1.40",
-    "gatsby-transformer-sharp": "^2.3.7",
-    "prop-types": "^15.7.2",
-    "react": "^16.12.0",
-    "react-dom": "^16.12.0",
+    "@kentico/gatsby-source-kontent": "^5.0.0",
+    "@material-ui/core": "^4.8.3",
+    "@material-ui/icons": "^4.5.1",
+    "@rshackleton/gatsby-transformer-kontent-image": "0.1.0-beta.6",
+    "airtable": "^0.8.1",
+    "formik": "^2.1.4",
+    "fs-extra": "^9.0.0",
+    "gatsby": "^2.20.20",
+    "gatsby-background-image": "^1.0.1",
+    "gatsby-image": "^2.2.38",
+    "gatsby-plugin-google-fonts": "^1.0.1",
+    "gatsby-plugin-google-tagmanager": "^2.2.1",
+    "gatsby-plugin-manifest": "^2.2.34",
+    "gatsby-plugin-material-ui": "^2.1.6",
+    "gatsby-plugin-netlify": "^2.2.1",
+    "gatsby-plugin-offline": "^3.0.30",
+    "gatsby-plugin-preact": "^3.3.1",
+    "gatsby-plugin-react-helmet": "^3.0.0",
+    "gatsby-plugin-robots-txt": "^1.5.0",
+    "gatsby-plugin-sharp": "^2.4.0",
+    "gatsby-plugin-sitemap": "^2.3.1",
+    "gatsby-remark-images": "^3.2.1",
+    "gatsby-source-airtable": "^2.1.1-beta.0",
+    "gatsby-source-filesystem": "^2.1.46",
+    "gatsby-source-ghost": "^4.0.3",
+    "gatsby-transformer-remark": "^2.7.1",
+    "gatsby-transformer-sharp": "^2.3.12",
+    "global": "^4.4.0",
+    "google-map-react": "^1.1.7",
+    "html-entities": "^1.2.1",
+    "humanize-duration": "^3.22.0",
+    "moment": "^2.24.0",
+    "preact": "^10.4.1",
+    "preact-render-to-string": "^5.1.7",
+    "react": "^16.5.1",
+    "react-dom": "^16.5.1",
     "react-helmet": "^5.2.1",
+    "react-interval-rerender": "^1.0.1",
+    "react-slick": "^0.25.2",
+    "react-spring": "^8.0.27",
+    "react-star-ratings": "^2.3.0",
+    "react-toastify": "^5.5.0",
+    "remarkable": "^2.0.0",
+    "slick-carousel": "^1.8.1",
     "styled-components": "^4.4.1"
   },
   "devDependencies": {
-    "prettier": "^1.19.1"
+    "eslint": "^5.7.0",
+    "eslint-config-google": "^0.10.0",
+    "eslint-plugin-node": "^7.0.1",
+    "eslint-plugin-react": "^7.11.1",
+    "gatsby-plugin-root-import": "^2.0.5",
+    "jest": "^23.6.0"
   },
-  "keywords": [
-    "gatsby"
-  ],
-  "license": "MIT",
-  "scripts": {
-    "build": "gatsby build",
-    "develop": "gatsby clean && gatsby develop",
-    "format": "prettier --write \"**/*.{js,jsx,json,md}\"",
-    "start": "npm run develop",
-    "serve": "gatsby serve",
-    "clean": "gatsby clean",
-    "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\" && exit 1"
-  },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/gatsbyjs/gatsby-starter-default"
-  },
-  "bugs": {
-    "url": "https://github.com/gatsbyjs/gatsby/issues"
+  "jest": {
+    "testEnvironment": "node",
+    "testPathIgnorePatterns": [
+      ".cache/"
+    ]
   }
 }
