@@ -35,7 +35,7 @@
     "gatsby-source-airtable": "^2.1.1-beta.0",
     "gatsby-source-filesystem": "^2.1.46",
     "gatsby-source-ghost": "^4.0.3",
-    "gatsby-transformer-remark": "^2.7.1",
+    "gatsby-transformer-remark": "^5.25.1",
     "gatsby-transformer-sharp": "^2.3.12",
     "global": "^4.4.0",
     "google-map-react": "^1.1.7",
